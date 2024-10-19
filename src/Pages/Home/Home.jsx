@@ -33,14 +33,7 @@ const Home = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <AppBar position="static" color="primary">
-                <Toolbar>
-                    <Typography variant="h6" style={{ flexGrow: 1 }}>
-                        <span style={{ color: 'white' }}>Tune</span>
-                        <span style={{ color: 'red' }}>IN</span>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+           
 
             <Container>
                 <Box display="flex" flexDirection="column" alignItems="center" mt={4}>

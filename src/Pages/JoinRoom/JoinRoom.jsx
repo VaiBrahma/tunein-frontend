@@ -57,7 +57,7 @@ const JoinRoom = () => {
           <RoomCard roomCode="default" />
         ) : (
           rooms.map((room) => (
-            <RoomCard key={room.id} roomCode={room.code} name={room.name} people={room.people} />
+            <RoomCard key={room.code} roomCode={room.code} name={room.name} people={room.people} />
           ))
         )}
       </Box>
