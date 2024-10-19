@@ -10,7 +10,8 @@ const RoomDetails = () => {
     useEffect(() => {
         const fetchRoomDetails = async () => {
             const data = await getRoomDetails(roomCode); 
-            setRoomDetails(data); 
+            setRoomDetails(data);
+            console.log(data);
         };
 
         fetchRoomDetails();
@@ -21,6 +22,7 @@ const RoomDetails = () => {
             {roomDetails ? (
                 <>
                     <Typography variant="h4" mb={2}>{roomDetails.name}</Typography>
+                    <Typography variant="h4" mb={2}>{roomDetails.code}</Typography>
                     <Typography variant="body1">{roomDetails.description}</Typography>
                     <Typography variant="h6" mt={2}>Current Participants: {roomDetails.people}</Typography>
                 </>

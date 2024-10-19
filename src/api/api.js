@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000/'; 
+const BASE_URL = 'http://10.81.66.245:8000/'; 
 
 export const fetchRooms = async () => {
   const response = await axios.get(`${BASE_URL}api/list/`);

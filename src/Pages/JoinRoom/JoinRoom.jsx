@@ -2,8 +2,10 @@ import { Typography, Box, TextField, Button } from '@mui/material';
 import RoomCard from '../../components/RoomCard';
 import { useState, useEffect } from 'react';
 import { fetchRooms, joinRoom, getMyRoom } from '../../api/api';
+import { useNavigate } from 'react-router-dom';
 
 const JoinRoom = () => {
+  const navigate = useNavigate();
   const [roomCode, setRoomCode] = useState('');
   const [rooms, setRooms] = useState([{ id: 'default', name: '', people: 0 }]);
 
@@ -11,6 +13,7 @@ const JoinRoom = () => {
     e.preventDefault();
     try {
       const response = await joinRoom(roomCode);
+      navigate(`/room/${roomCode}`);
       console.log(response.message);
     } catch (err) {
       console.error('Failed to join room:', err);
@@ -51,10 +54,10 @@ const JoinRoom = () => {
 
       <Box display="flex" flexDirection="row" flexWrap="wrap" justifyContent="center" mt={2}>
         {rooms.length === 0 || (rooms.length === 1 && rooms[0].id === 'default') ? (
-          <RoomCard roomId="default" />
+          <RoomCard roomCode="default" />
         ) : (
           rooms.map((room) => (
-            <RoomCard key={room.id} roomId={room.id} name={room.name} people={room.people} />
+            <RoomCard key={room.id} roomCode={room.code} name={room.name} people={room.people} />
           ))
         )}
       </Box>
