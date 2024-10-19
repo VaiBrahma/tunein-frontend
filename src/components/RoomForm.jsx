@@ -12,7 +12,7 @@ const RoomForm = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const roomData = { guest_can_pause: permission, votes_to_skip: 1 };
+      const roomData = { guest_controls: permission, name: roomName, description: description };
       const data = await createRoom(roomData);
       console.log('Room created:', data);
       onClose();

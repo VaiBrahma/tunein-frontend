@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 
-const RoomCard = ({ roomCode }) => {
+const RoomCard = ({ roomCode, name }) => {
   const isDefaultRoom = roomCode === 'default';
 
   return (
@@ -12,7 +12,7 @@ const RoomCard = ({ roomCode }) => {
         ) : (
           <>
             <Typography variant="h6">Room Code: {roomCode}</Typography>
-            <Typography>Room Name: Room Example</Typography>
+            <Typography>Room Name: {name}</Typography>
             <Typography>People: 3</Typography>
           </>
         )}
