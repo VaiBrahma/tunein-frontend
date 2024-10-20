@@ -37,6 +37,8 @@ const RoomDetails = () => {
                             {roomDetails.description || 'No description available'}
                         </Typography>
 
+                        <MusicPlayer room={roomDetails}/>
+
                         {/* Listeners */}
                         <Typography variant="h5" fontWeight="bold" mb={2}>
                             Listeners
@@ -89,7 +91,7 @@ const RoomDetails = () => {
                         </Typography>
                         <Typography variant="body1">Is Host: {roomDetails.is_host ? 'Yes' : 'No'}</Typography>
                     </CardContent>
-                    <MusicPlayer room={roomDetails}/>
+                    
                 </Card>
             ) : (
                 <Typography variant="h6" textAlign="center">

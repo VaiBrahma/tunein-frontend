@@ -45,7 +45,7 @@ const JoinRoom = () => {
           required
           sx={{ mb: 2, maxWidth: '400px', width: '100%' }}
         />
-        <Button type="submit" variant="contained" color="secondary" sx={{ width: '100%' }}>
+        <Button type="submit" variant="contained" color="primary" sx={{ width: '100%' , maxWidth: '400px'}}>
           Join Room
         </Button>
       </form>

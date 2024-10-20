@@ -1,11 +1,17 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography, useTheme } from '@mui/material';
 
 const RoomCard = ({ roomCode, name }) => {
+  const theme = useTheme();
   const isDefaultRoom = roomCode === 'default';
 
   return (
-    <Card sx={{ m: 2, bgcolor: isDefaultRoom ? 'lightgray' : 'white' }}>
+    <Card
+      sx={{
+        m: 2,
+        bgcolor: isDefaultRoom ? theme.palette.action.disabledBackground : theme.palette.background.paper,
+      }}
+    >
       <CardContent>
         {isDefaultRoom ? (
           <Typography variant="h6">No Rooms Available</Typography>
