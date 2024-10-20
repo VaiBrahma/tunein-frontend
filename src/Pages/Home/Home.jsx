@@ -34,7 +34,7 @@ const Home = ({ toggleTheme, isDarkMode }) => {
     <Container
       maxWidth="sm"
       sx={{
-        backgroundColor: "background.default",
+        backgroundColor: isDarkMode ? "#121212" : "#fff",
         borderRadius: 3,
         p: 4,
         boxShadow: 3,
@@ -47,7 +47,7 @@ const Home = ({ toggleTheme, isDarkMode }) => {
         justifyContent="center"
         mt={4}
         sx={{
-          background: "linear-gradient(135deg, #06D6A0 30%, #FFD166 90%)",
+          backgroundColor: isDarkMode ? "#1A1A1A" : "#fff",
           borderRadius: "16px",
           p: 5,
           boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
@@ -57,7 +57,7 @@ const Home = ({ toggleTheme, isDarkMode }) => {
           variant="h4"
           gutterBottom
           sx={{
-            color: "text.primary",
+            color: isDarkMode ? "#fff" : "#121212",
             fontWeight: 700,
             textTransform: "uppercase",
             textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
@@ -70,7 +70,11 @@ const Home = ({ toggleTheme, isDarkMode }) => {
           <Typography
             variant="h6"
             mb={2}
-            sx={{ color: "text.secondary", fontWeight: 500, letterSpacing: 1 }}
+            sx={{
+              color: isDarkMode ? "#fff" : "#121212",
+              fontWeight: 500,
+              letterSpacing: 1,
+            }}
           >
             You are currently in room: {currentRoom}
           </Typography>
@@ -78,7 +82,11 @@ const Home = ({ toggleTheme, isDarkMode }) => {
           <Typography
             variant="h6"
             mb={2}
-            sx={{ color: "text.secondary", fontWeight: 500, letterSpacing: 1 }}
+            sx={{
+              color: isDarkMode ? "#fff" : "#121212",
+              fontWeight: 500,
+              letterSpacing: 1,
+            }}
           >
             You are not in any room.
           </Typography>
@@ -88,7 +96,7 @@ const Home = ({ toggleTheme, isDarkMode }) => {
           variant="contained"
           onClick={handleJoinClick}
           sx={{
-            backgroundColor: "primary.main",
+            backgroundColor: isDarkMode ? "#C52A2A" : "#FFD166",
             color: "#fff",
             fontSize: "1.1rem",
             fontWeight: 600,
@@ -96,7 +104,7 @@ const Home = ({ toggleTheme, isDarkMode }) => {
             width: "200px",
             mb: 2,
             "&:hover": {
-              backgroundColor: "#C52A2A", // Darker shade for hover effect
+              backgroundColor: isDarkMode ? "#C52A2A" : "#FFD166",
             },
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
             transition: "all 0.3s ease",
@@ -109,14 +117,14 @@ const Home = ({ toggleTheme, isDarkMode }) => {
           variant="contained"
           onClick={handleCreateClick}
           sx={{
-            backgroundColor: "secondary.main",
+            backgroundColor: isDarkMode ? "#05B49A" : "#06D6A0",
             color: "#fff",
             fontSize: "1.1rem",
             fontWeight: 600,
             borderRadius: 20,
             width: "200px",
             "&:hover": {
-              backgroundColor: "#05B49A", // Darker shade for hover effect
+              backgroundColor: isDarkMode ? "#05B49A" : "#06D6A0",
             },
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
             transition: "all 0.3s ease",
